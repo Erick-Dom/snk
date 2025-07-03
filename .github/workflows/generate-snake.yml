@@ -18,6 +18,9 @@ jobs:
           github_user_name: Erick-Dom
           svg_out_path: output/github-contribution-grid-snake.svg
           gif_out_path: output/github-contribution-grid-snake.gif
+          color_snake: "#00ff00"               # cor da cobrinha (verde neon)
+          color_dots: "#111111, #222222"       # tons dos quadradinhos
+          background_color: "#000000"          # fundo preto
 
       - name: Commit e Push automático
         uses: stefanzweifel/git-auto-commit-action@v5
