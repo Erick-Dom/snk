@@ -16,9 +16,8 @@ jobs:
         uses: Platane/snk@master
         with:
           github_user_name: Erick-Dom
-          outputs: |
-            ./output/github-contribution-grid-snake.svg
-            ./output/github-contribution-grid-snake.gif
+          svg_out_path: output/github-contribution-grid-snake.svg
+          gif_out_path: output/github-contribution-grid-snake.gif
 
       - name: Commit e Push automático
         uses: stefanzweifel/git-auto-commit-action@v5
