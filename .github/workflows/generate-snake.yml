@@ -2,7 +2,7 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *" # executa todo dia à meia-noite
+    - cron: "0 0 * * *" # roda todo dia à meia-noite
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v3
 
-      - name: Gerar animação da cobrinha
+      - name: Gerar a animação da cobrinha
         uses: Platane/snk@master
         with:
           github_user_name: Erick-Dom
@@ -20,10 +20,7 @@ jobs:
             ./output/github-contribution-grid-snake.svg
             ./output/github-contribution-grid-snake.gif
 
-      - name: Commit e Push da animação
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "generate snake animation"
-          git push
+      - name: Commit e Push automático
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🐍 Atualizando animação da Snake"
